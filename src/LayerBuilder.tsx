@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layer } from '/Cake';
+import { CakeLayer } from '/CakeLayer.tsx';
 
 
-export const LayerBuilder: React.FC<{ layer: Layer; deleteLayer: () => void; }> = ({ layer, deleteLayer }) => {
+export const LayerBuilder: React.FC<{ layer: CakeLayer; deleteLayer: () => void; }> = ({ layer, deleteLayer }) => {
     return (
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', padding: '5px', border: '1px solid #ddd', borderRadius: '4px' }}>
         <div style={{ backgroundColor: layer.color, width: '20px', height: '20px', marginRight: '10px' }}></div>
