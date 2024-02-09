@@ -1,5 +1,5 @@
 import { LayerBuilder } from './LayerBuilder'
-import addLayer from './LayerAdd';
+import LayerAdd from './LayerAdd';
 
 
 function CakeBuilder() {
