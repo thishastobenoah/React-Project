@@ -1,15 +1,15 @@
-import React from 'react';
-import { Layer } from '/Cake';
+import { LayerBuilder } from './LayerBuilder'
+import addLayer from './LayerAdd';
 
 
-export const LayerBuilder: React.FC<{ layer: Layer; deleteLayer: () => void; }> = ({ layer, deleteLayer }) => {
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', padding: '5px', border: '1px solid #ddd', borderRadius: '4px' }}>
-        <div style={{ backgroundColor: layer.color, width: '20px', height: '20px', marginRight: '10px' }}></div>
-        <div style={{ marginRight: '10px' }}>Color</div>
-        <div style={{ marginRight: '10px' }}>Width: {layer.width}</div>
-        <div style={{ marginRight: '10px' }}>Height: {layer.height}</div>
-        <button onClick={deleteLayer} style={{ marginLeft: 'auto' }}>Delete</button>
-      </div>
-    );
-  };
+function CakeBuilder() {
+
+  return (
+    <>
+    <LayerBuilder layer={{height:.5, width:1, color: "#5F9EA0"}}/>
+    <LayerAdd/>
+    </>
+  )
+}
+
+export default CakeBuilder
