@@ -12,6 +12,12 @@ function addLayer() {
     setShowForm(true);
   };
 
+  const handleCancelClick = () => {
+    setShowForm(false);
+  };
+
+  
+
   return (
     <div>
       <h1>Add Layer</h1>

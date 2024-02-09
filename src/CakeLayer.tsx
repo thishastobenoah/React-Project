@@ -1,4 +1,5 @@
 import './CakeLayer.css'
+import Layer from './Layer'
 interface Props {
     layer: Layer;
 };
