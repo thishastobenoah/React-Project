@@ -1,21 +1,23 @@
-import { LayerBuilder } from './LayerBuilder'
+import { LayerBuilder } from './LayerBuilder';
 import LayerAdd from './LayerAdd';
-import LayerForm from './LayerForm';
+import { Layer } from './Layer';
 
-
-
-
-function CakeBuilder() {
-
-
- return (
-   <>
-   <LayerBuilder layer={{height:.5, width:1, color: "#5F9EA0"}}/>
-   <LayerAdd/>
-  
-   </>
- )
+interface CakeBuilderProps {
+  layers: Layer[];
+  deleteLayer: (index: number) => void;
 }
 
+function CakeBuilder({ layers, deleteLayer }: CakeBuilderProps) {
+  return (
+    <>
 
-export default CakeBuilder
+      {layers.map((layer, index) => (
+        <LayerBuilder key={index} layer={layer} deleteLayer={() => deleteLayer(index)} />
+      ))}
+      <LayerAdd />
+
+    </>
+  );
+}
+
+export default CakeBuilder;

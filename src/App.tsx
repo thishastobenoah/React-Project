@@ -12,16 +12,19 @@ import LayerAdd from './LayerAdd'
 function App() {
  const [layers, setLayers] = useState<Layer[]>([])
 
- // const layersArr = () => {
- //   setLayers[]
- // };
 
- return (
-   <>
-     <Cake layersArr={layers}/>
-     <CakeBuilder/>
-   </>
- )
+  const deleteLayer = (layerIndex: number) => {
+    setLayers(currentLayers => currentLayers.filter((_, index) => index !== layerIndex));
+  }; 
+  
+
+  return (
+    <>
+      <Cake layersArr={layers}/>
+      <CakeBuilder layers={layers} deleteLayer={deleteLayer}/>
+    </>
+  )
+
 }
 
 export default App
