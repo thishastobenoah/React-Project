@@ -4,6 +4,8 @@ import Cake from './Cake'
 import './App.css'
 import CakeBuilder from './CakeBuilder'
 import Layer from './Layer'
+import LayerForm from './LayerAdd'
+import LayerAdd from './LayerAdd'
 
 
 
@@ -15,6 +17,7 @@ function App() {
     setLayers(currentLayers => currentLayers.filter((_, index) => index !== layerIndex));
   }; 
   
+
   return (
     <>
       <Cake layersArr={layers}/>

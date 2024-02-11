@@ -1,5 +1,5 @@
 import { LayerBuilder } from './LayerBuilder';
-import LayerAdd from './LayerAdd'; // make sure this is the correct import, it should be LayerAdd, not addLayer
+import LayerAdd from './LayerAdd';
 import { Layer } from './Layer';
 
 interface CakeBuilderProps {
@@ -10,10 +10,12 @@ interface CakeBuilderProps {
 function CakeBuilder({ layers, deleteLayer }: CakeBuilderProps) {
   return (
     <>
+
       {layers.map((layer, index) => (
         <LayerBuilder key={index} layer={layer} deleteLayer={() => deleteLayer(index)} />
       ))}
       <LayerAdd />
+
     </>
   );
 }

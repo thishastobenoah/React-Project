@@ -1,27 +1,20 @@
 import { useState } from 'react';
-import LayerForm from "./LayerForm";
 
+import LayerForm from "./LayerForm";
+        
 function addLayer() {
   const [showForm, setShowForm] = useState(false);
 
-  const handleButtonClick = () => {
-    setShowForm(true);
+  const toggleForm = () => {
+    setShowForm(!showForm);
   };
-
-  const handleCancelClick = () => {
-    setShowForm(false);
-  };
-
-  
 
   return (
     <div>
       <h1>Add Layer</h1>
-      <button onClick={handleButtonClick}>Show Form</button>
-      {showForm ?
-        <LayerForm /> : 
-        <></>
-      }
+      <button onClick={toggleForm}>Show Form</button>
+      {showForm && 
+        <LayerForm handleCancelClick={toggleForm}/>}
     </div>
   );
 }
