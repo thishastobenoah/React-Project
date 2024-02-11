@@ -10,10 +10,15 @@ import Layer from './Layer'
 function App() {
   const [layers, setLayers] = useState<Layer[]>([]) 
 
+
+  const deleteLayer = (layerIndex: number) => {
+    setLayers(currentLayers => currentLayers.filter((_, index) => index !== layerIndex));
+  }; 
+  
   return (
     <>
       <Cake layersArr={layers}/>
-      <CakeBuilder/>
+      <CakeBuilder layers={layers} deleteLayer={deleteLayer}/>
     </>
   )
 }

@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LayerForm from "./LayerForm";
-
-interface Props {
-
-}
 
 function addLayer() {
   const [showForm, setShowForm] = useState(false);
