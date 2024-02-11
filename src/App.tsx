@@ -4,7 +4,7 @@ import Cake from './Cake'
 import './App.css'
 import CakeBuilder from './CakeBuilder'
 import Layer from './Layer'
-import LayerForm from './LayerAdd'
+import LayerForm from './LayerForm'
 import LayerAdd from './LayerAdd'
 
 
@@ -12,7 +12,9 @@ import LayerAdd from './LayerAdd'
 function App() {
  const [layers, setLayers] = useState<Layer[]>([])
 
-
+ const addLayer = (newLayer: Layer) => {
+  setLayers(currentLayers => [...currentLayers, newLayer]);
+};
   const deleteLayer = (layerIndex: number) => {
     setLayers(currentLayers => currentLayers.filter((_, index) => index !== layerIndex));
   }; 
@@ -21,7 +23,7 @@ function App() {
   return (
     <>
       <Cake layersArr={layers}/>
-      <CakeBuilder layers={layers} deleteLayer={deleteLayer}/>
+      <CakeBuilder layers={layers} addLayer={addLayer} deleteLayer={deleteLayer}/>
     </>
   )
 
