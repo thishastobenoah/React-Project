@@ -1,16 +1,21 @@
-import { LayerBuilder } from './LayerBuilder'
-import addLayer from './LayerAdd';
+import { LayerBuilder } from './LayerBuilder';
+import LayerAdd from './LayerAdd'; // make sure this is the correct import, it should be LayerAdd, not addLayer
+import { Layer } from './Layer';
 
-
-
-function CakeBuilder({layers, deleteLayer}: CakeBuilderProps) {
-
-  return (
-    <>
-    <LayerBuilder layer={{height:.5, width:1, color: "#5F9EA0"}}/>
-    <addLayer/>
-    </>
-  )
+interface CakeBuilderProps {
+  layers: Layer[];
+  deleteLayer: (index: number) => void;
 }
 
-export default CakeBuilder
+function CakeBuilder({ layers, deleteLayer }: CakeBuilderProps) {
+  return (
+    <>
+      {layers.map((layer, index) => (
+        <LayerBuilder key={index} layer={layer} deleteLayer={() => deleteLayer(index)} />
+      ))}
+      <LayerAdd />
+    </>
+  );
+}
+
+export default CakeBuilder;
