@@ -10,7 +10,7 @@ import LayerAdd from './LayerAdd'
 
 
 function App() {
-  const [layers, setLayers] = useState<Layer[]>([]) 
+ const [layers, setLayers] = useState<Layer[]>([])
 
 
   const deleteLayer = (layerIndex: number) => {
@@ -24,6 +24,7 @@ function App() {
       <CakeBuilder layers={layers} deleteLayer={deleteLayer}/>
     </>
   )
+
 }
 
 export default App

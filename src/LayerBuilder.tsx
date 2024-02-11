@@ -13,5 +13,3 @@ export const LayerBuilder: React.FC<{ layer: Layer; deleteLayer: () => void; }> 
       </div>
     );
   };
-
-  
