@@ -10,18 +10,18 @@ import LayerAdd from './LayerAdd'
 
 
 function App() {
-  const [layers, setLayers] = useState<Layer[]>([]) 
+ const [layers, setLayers] = useState<Layer[]>([])
 
-  // const layersArr = () => {
-  //   setLayers[]
-  // };
+ // const layersArr = () => {
+ //   setLayers[]
+ // };
 
-  return (
-    <>
-      <Cake layersArr={layers}/>
-      <CakeBuilder/>
-    </>
-  )
+ return (
+   <>
+     <Cake layersArr={layers}/>
+     <CakeBuilder/>
+   </>
+ )
 }
 
 export default App
