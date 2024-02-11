@@ -1,9 +1,18 @@
 import { useState } from 'react';
 import LayerForm from "./LayerForm";
+import Layer from './Layer'
         
-function addLayer() {
+interface layerAddProps {
+  addLayer: (newLayer: Layer) => void;
+}
+
+function addLayer({addLayer}: layerAddProps) {
  const [showForm, setShowForm] = useState(false);
 
+ const handleAddLayer=(layer: Layer) => {
+    addLayer(layer)
+    setShowForm(!showForm);
+ };
 
   const toggleForm = () => {
     setShowForm(!showForm);
@@ -14,7 +23,7 @@ function addLayer() {
       <h1>Add Layer</h1>
       <button onClick={toggleForm}>Show Form</button>
       {showForm && 
-        <LayerForm handleCancelClick={toggleForm}/>}
+        <LayerForm addLayer={handleAddLayer} handleCancelClick={toggleForm}/>}
     </div>
   );
 }
