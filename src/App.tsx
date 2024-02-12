@@ -1,19 +1,18 @@
-// import React from 'react';
 import { useState } from 'react';
-import Cake from './Cake'
 import './App.css'
 import CakeBuilder from './CakeBuilder'
 import Layer from './Layer'
-import LayerForm from './LayerForm'
-import LayerAdd from './LayerAdd'
+import { Cake } from './Cake';
 
 
 
-function App() {
+
+export function App() {
  const [layers, setLayers] = useState<Layer[]>([])
 
  const addLayer = (newLayer: Layer) => {
-  setLayers(currentLayers => [...currentLayers, newLayer]);
+  let cakeLayers = [...layers, newLayer]
+  setLayers(cakeLayers.sort((a, b) => a.width - b.width));
 };
   const deleteLayer = (layerIndex: number) => {
     setLayers(currentLayers => currentLayers.filter((_, index) => index !== layerIndex));
@@ -21,10 +20,10 @@ function App() {
   
 
   return (
-    <>
-      <Cake layersArr={layers}/>
+    <div className="mainComponents">
       <CakeBuilder layers={layers} addLayer={addLayer} deleteLayer={deleteLayer}/>
-    </>
+      <Cake layersArr={layers}/>
+    </div>
   )
 
 }

@@ -1,7 +1,8 @@
 import { LayerBuilder } from './LayerBuilder';
 import LayerAdd from './LayerAdd';
 import { Layer } from './Layer';
-import App from "./App"
+import './CakeBuilder.css'
+// import LayerForm from './LayerForm';
 
 interface CakeBuilderProps {
   layers: Layer[];
@@ -9,14 +10,15 @@ interface CakeBuilderProps {
   deleteLayer: (index: number) => void;
 }
 
-function CakeBuilder({ layers, addLayer, deleteLayer}: CakeBuilderProps) {
+function CakeBuilder({layers, addLayer, deleteLayer}: CakeBuilderProps) {
   return (
-    <>
+    <div className="cakeBuilder">
+        <LayerAdd addLayer={addLayer}/>
       {layers.map((layer, index) => (
         <LayerBuilder key={index} layer={layer} deleteLayer={() => deleteLayer(index)} />
       ))}
-      <LayerAdd addLayer={addLayer}/>
-    </>
+    
+    </div>
   );
 }
 

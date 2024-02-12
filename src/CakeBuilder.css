@@ -1,0 +1,8 @@
+.cakeBuilder {
+        display: flex;
+        flex-direction: column;
+        margin: 4em;
+        width: 100%;
+       
+
+};
