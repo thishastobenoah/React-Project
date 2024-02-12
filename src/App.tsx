@@ -1,11 +1,9 @@
-// import React from 'react';
 import { useState } from 'react';
 import './App.css'
 import CakeBuilder from './CakeBuilder'
 import Layer from './Layer'
 import { Cake } from './Cake';
-// import LayerForm from './LayerForm'
-// import LayerAdd from './LayerAdd'
+
 
 
 
