@@ -21,7 +21,7 @@ function addLayer({addLayer}: layerAddProps) {
 
   return (
     <div>
-      <button onClick={toggleForm}>Add Layer</button>
+      <button id="addButton" onClick={toggleForm}>Add Layer</button>
       {showForm && 
         <LayerForm addLayer={handleAddLayer} handleCancelClick={toggleForm}/>}
     </div>

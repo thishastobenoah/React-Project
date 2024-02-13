@@ -4,6 +4,17 @@ body {
   bottom: 20px;
   width: 100%;
 }
+
+h1 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translatex(-50%);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
 .mainComponents {
     display: flex;
     flex-direction: row;

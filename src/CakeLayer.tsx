@@ -1,21 +1,5 @@
 import './CakeLayer.css'
 import React, { useEffect } from 'react'
-// import CakeBuilder from './CakeBuilder'
-// import LayerBuilder from './LayerBuilder'
-// import Cake from './Cake'
-// import Layer from './Layer'
-
-// interface Props {
-//    layer: Layer;
-// };
-
-// function CakeLayer(props: Props) {
-//     return (
-//        <div>
-//            <div className="Layer" style={{height: props.layer.height, width: props.layer.width, backgroundColor: props.layer.color}}></div>
-//        </div>
-//    );
-// };
 
 interface LayerProps {
     height: number;
@@ -32,7 +16,7 @@ const CakeLayer: React.FC<LayerProps> = (props: LayerProps) => {
 
     return (
         <>
-        <div className="oneLayer" style={{backgroundColor: `${props.color}`, width: `${props.width * 50}px`, height: `${props.height * 50}px`, border: `${props.color}`}}>
+        <div className="oneLayer" style={{backgroundColor: `${props.color}`, width: `${props.width * 35}px`, height: `${props.height * 35}px`, border: `${props.color}`}}>
         </div>
         </>
     )

@@ -20,9 +20,12 @@ export function App() {
   
 
   return (
-    <div className="mainComponents">
+      <div className="appContainer">
+        <h1>Cake Builder</h1>
+      <div className="mainComponents">
       <CakeBuilder layers={layers} addLayer={addLayer} deleteLayer={deleteLayer}/>
       <Cake layersArr={layers}/>
+    </div>
     </div>
   )
 
